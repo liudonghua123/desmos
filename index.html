@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+
+
+<html no_gl="true" lang="en" class="dcg-calculator-api-container">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+
+    <link rel="stylesheet" href="assets/build/calculator_tablet-b2cfa29bef817e205ff89140ec92799a9d871e4c.css" />
+<link rel="stylesheet" href="assets/build/android-6784ebfdba5a6b61214e78146808e9f53e9d5964.css" />
+
+    <script>
+      window.platform = 'android';
+    </script>
+  </head>
+  <body>
+    <div class="dcg-sliding-interior">
+      <div id="dcg-header-container"></div>
+
+      <!-- GRAPHER -->
+      <div id="graph-container">
+      </div>
+    </div>
+
+    <div id="mygraphs-container"></div>
+    <div id="google-login-cover" class="dcg-fullscreen-loading-container">
+      <span class="dcg-spinner"></span>
+    </div>
+    <div id="dcg-modal-container"></div>
+
+    <script type="text/javascript">
+  // catches errors within iframe and promotes them to qunit during tests
+  try {
+    window.onerror=window.top.onerror;
+  } catch (ex){}
+  if(typeof Desmos === 'undefined') Desmos = {};
+  Desmos.config = {};
+  Desmos.commit = 'fae488bc84f1fbc3dcc79fdb40e05574a5c8602a';
+</script>
+ <!-- Pull config information, and include it in Desmos.config -->
+    <script type="text/javascript">
+  if(window.location.protocol === 'file:') {
+    window.history.pushState = function(){};
+    window.history.replaceState = function(){};
+  }
+</script>
+ <!-- Make sure we don't use pushstate on file protocol -->
+
+    <script src="assets/build/locale_data-7444318b103660c42eee8692dacfc041b4487fbd.js"></script>
+<script src="assets/build/calculator_tablet-597fb15913618aa7574467f393a1fd1f3f0f8c50.js"></script>
+
+    <script>
+      require(['toplevel/calculator_tablet', 'testbridge', 'jquery'], function (calc, TestBridge, $) {
+        $('.dcg-loading-div-container').fadeOut();
+        window.Calc = calc;
+        TestBridge.ready();
+      });
+    </script>
+  </body>
+</html>
